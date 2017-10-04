@@ -17,13 +17,13 @@ jQuery plugin for quick building a Single Page Application
 
 <script type="text/javascript">
 $(document).ready(function() {
-	var app = $.quickspa({
-		templateDir  : './pages/',
-		defaultView  : 'home',
-		appId: 'main-app',
-        onReady: function(route, page) { },
-		routes:{ about: "about.html", home: "home.html"}
-	});	
+     var app = $.quickspa({
+     templateDir  : './pages/',
+     defaultView  : 'home',
+     appId: 'main-app',
+     onReady: function(route, page) { },
+     routes:{ about: "about.html", home: "home.html"}
+    });	
 	app.run();
 });
 </script>
@@ -46,7 +46,7 @@ Plugin options:
 | defaultView | Home page route | 'home' |
 | appId | &lt;div&gt; element where you want your pages inserted | 'main-app' |
 | onReady | what to do after page is loaded e.g. highlight clicked menu item as in the example | function(route,page){} |
-| routes | routes definition in a form {route:"page.html", ...}. The route appears in a amenu as: &lt;a href="#route"&gt;  ...| {} |
+| routes | routes definition in a form {route:"page.html", ...}. A route appears in a menu as: &lt;a href="#route"&gt;  ...| {} |
 
 ### Copyright
 MIT license. 
