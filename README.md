@@ -25,8 +25,6 @@ $(document).ready(function() {
 		routes:{ about: "about.html", home: "home.html"}
 	});	
 	app.run();
-
-
 });
 </script>
 </head>
