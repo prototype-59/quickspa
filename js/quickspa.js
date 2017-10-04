@@ -15,21 +15,24 @@
       defaultView  : 'home',
       templateDir  : './pages/',
       appId: 'main-app',
+      onReady: function(route, page) { },
       routes:{}
     }, options );
 
     
     // manage hash change
     var routeChange = function() {
-      var id    = location.hash.slice(1);
-      var route = settings.routes[id];
+      var route    = location.hash.slice(1);
+      var page = settings.routes[route];
       var elm   = $("#"+settings.appId); 
 
-      if( ! elm || ! route) {
-        console.log(id+" page not found");
+      if( ! elm || ! page) {
+        console.log(route+" page not found");
         return;
       }
-      elm.empty().load(settings.templateDir+route);
+      elm.empty().load(settings.templateDir+page,function() {
+        settings.onReady(route, page);
+      });
     }
 
     //  run

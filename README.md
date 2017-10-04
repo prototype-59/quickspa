@@ -21,6 +21,7 @@ $(document).ready(function() {
 		templateDir  : './pages/',
 		defaultView  : 'home',
 		appId: 'main-app',
+        onReady: function(route, page) { },
 		routes:{ about: "about.html", home: "home.html"}
 	});	
 	app.run();
@@ -43,10 +44,11 @@ Plugin options:
 
 | Option | Description | Default |
 |---|---|---|
-| templateDir | directory where your pages are kept | './pages' |
-| defaultView | home page | 'home' |
-| appId | div element where you want your pages inserted | 'main-app' |
-| routes | route definition in a form {hash_link:"page_name", ...} hash_link appears as <a href="#hash_link"> ...| empty |
+| templateDir | Directory where your pages are kept | './pages' |
+| defaultView | Home page route | 'home' |
+| appId | &lt;div&gt; element where you want your pages inserted | 'main-app' |
+| onReady | what to do after page is loaded e.g. highlight clicked menu item as in the example | function(route,page){} |
+| routes | routes definition in a form {route:"page.html", ...}. The route appears in a amenu as: &lt;a href="#route"&gt;  ...| {} |
 
 ### Copyright
 MIT license. 
